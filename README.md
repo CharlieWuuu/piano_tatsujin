@@ -1,6 +1,6 @@
 以太鼓達人為靈感，設計成可以計分的音樂遊戲
 
-網址在此：codepen，github
+網址在此：https://charliewuuu.github.io/piano_tatsujin/
 
 功能說明：
 
