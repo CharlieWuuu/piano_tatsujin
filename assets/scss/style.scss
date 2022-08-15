@@ -1,0 +1,229 @@
+$color_white: #eee;
+$color_black: #585858;
+$color_green: #02a388;
+$key_width: 44px;
+$key_height: 200px;
+
+@mixin size($w, $h){
+	width: $w;
+	height: $h;
+}
+
+%flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+*{
+	font-family: 微軟正黑體;
+}
+
+h2{
+	margin-bottom: 30px;
+}
+
+html, body{
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	@extend %flex-center;
+	position: relative;
+	background-color: lighten($color_black, 25);
+}
+
+#app{
+	box-shadow: 0px 0px 40px -5px rgba(0,0,0,0.4);
+}
+
+.controls{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 50px;
+	@extend %flex-center;
+	background-color: lighten($color_black, 5);
+	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	gap: 20px;
+	span{
+		color: $color_white;
+	}
+	button, select{
+		background-color: transparent;
+		border: solid 1px $color_white;
+		color: $color_white;
+		padding: 4px 12px;
+		border-radius: 4px;
+		transition: .5s;
+		cursor: pointer;
+		&:hover{
+			background-color: $color_black;
+		}
+		.fa-circle{
+			color: darkred;
+		}
+		option{
+			background-color: $color_black;
+		}
+		&.opacity{
+			cursor: default;
+			opacity: 0.5;
+			&:hover{
+				background-color: initial;
+				color: $color_white;
+			}
+		}
+	}
+	#startChallenge{
+		background-color: $color_green;
+		&:hover{
+			background-color: darken($color_green, 5);
+		}
+		&.opacity:hover{
+				background-color: $color_green;
+				color: $color_white;
+			}
+		}
+	}
+
+
+.upper_box{
+	@extend %flex-center;
+	.path_container{
+		@extend %flex-center;
+		.path{
+			position: relative;
+			height: 200px;
+			@media screen and (max-width: 767px) {
+				height: 100px;
+			}
+			.white_path{
+				@include size($key_width, 100%);
+				border: solid 1px $color_white;
+				background-color: gray;
+				@media screen and (max-width: 767px) {
+					width: $key_width*0.85;
+				}
+			}
+			.black_path{
+				position: absolute;
+				top: 0px;
+				@include size($key_width/2, 100%);
+				margin-left: -$key_width/4;
+				margin-right: -$key_width/4;
+				z-index: 20;
+				@media screen and (max-width: 767px) {
+					width: $key_width*0.85/2;
+				}
+			}
+
+			.white_square, .black_square{
+				position: absolute;
+				top: 0;
+				opacity: 0;
+				width: 98%;
+				height: 10px;
+				&.show{
+					opacity: 1;
+					animation: squareDown 2s linear forwards;
+					@media screen and (max-width: 767px) {
+						animation: squareDownMobile 2s linear forwards;
+					}
+				}
+			}
+			.white_square.show{
+				background-image: linear-gradient(180deg, lighten($color_green,10) 70%, $color_green 100%);
+			}
+			.black_square.show{
+				background-image: linear-gradient(180deg, lighten($color_green,10) 70%, $color_green 100%);
+			}
+		}
+	}
+}
+
+@keyframes squareDown {
+	0%{transform: translateY(0%)}
+	100%{transform: translateY(250px)}
+}
+
+@keyframes squareDownMobile {
+	0%{transform: translateY(0%)}
+	100%{transform: translateY(115px)}
+}
+
+.center_box{
+	@extend %flex-center;
+	flex-direction: column;
+	.keyboard{
+		position: relative;
+		@extend %flex-center;
+		align-items: flex-start;
+		.piano_key{
+			cursor: pointer;
+			.white{
+				@extend %flex-center;
+				align-items: flex-end;
+				@include size($key_width, $key_height);
+				border: solid 1px $color_white;
+				background-color: white;
+				transition: .1s;
+				@media screen and (max-width: 767px) {
+					width: $key_width*0.85;
+					height: $key_height/2;
+				}
+				&:hover{
+					background-color: darken($color_white, 10);
+				}
+				&.playing{
+					background-color: darken($color_white, 10);
+				}
+			}
+			.black{
+				@extend %flex-center;
+				align-items: flex-end;
+				position: absolute;
+				top: 0px;
+				@include size($key_width/2, $key_height*0.55);
+				background-color: $color_black;
+				margin-left: -$key_width/4;
+				margin-right: -$key_width/4;
+				z-index: 20;
+				transition: .1s;
+				@media screen and (max-width: 767px) {
+					width: $key_width*0.85/2;
+					height: $key_height*0.55/2;
+				}
+				&:hover{
+					background-color: darken($color_black, 10);
+				}
+				&.playing{
+					background-color: lighten($color_black, 10);
+				}
+			}
+			.label{
+				position: absolute;
+				top: 0px;
+				font-size: 8px;
+			}
+			.white{
+				.label{
+					color: rgba($color_black, 0.4);
+					transform: translateY(20px);
+				}
+			}
+			.black{
+				.label{
+					color: rgba($color_white, 0.4);
+					transform: translateY(10px);
+				}
+			}
+		}
+	}
+}
+
+@keyframes showNote {
+	0%{opacity: 1;}
+	100%{opacity: 0;}
+}

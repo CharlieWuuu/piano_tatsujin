@@ -1,0 +1,227 @@
+@charset "UTF-8";
+.center_box .keyboard .piano_key .black, .center_box .keyboard .piano_key .white, .center_box .keyboard, .center_box, .upper_box .path_container, .upper_box, .controls, html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  font-family: 微軟正黑體;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+html, body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #989898;
+}
+
+#app {
+  box-shadow: 0px 0px 40px -5px rgba(0, 0, 0, 0.4);
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: #656565;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  gap: 20px;
+}
+.controls span {
+  color: #eee;
+}
+.controls button, .controls select {
+  background-color: transparent;
+  border: solid 1px #eee;
+  color: #eee;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.controls button:hover, .controls select:hover {
+  background-color: #585858;
+}
+.controls button .fa-circle, .controls select .fa-circle {
+  color: darkred;
+}
+.controls button option, .controls select option {
+  background-color: #585858;
+}
+.controls button.opacity, .controls select.opacity {
+  cursor: default;
+  opacity: 0.5;
+}
+.controls button.opacity:hover, .controls select.opacity:hover {
+  background-color: initial;
+  color: #eee;
+}
+.controls #startChallenge {
+  background-color: #02a388;
+}
+.controls #startChallenge:hover {
+  background-color: #028a73;
+}
+.controls #startChallenge.opacity:hover {
+  background-color: #02a388;
+  color: #eee;
+}
+
+.upper_box .path_container .path {
+  position: relative;
+  height: 200px;
+}
+@media screen and (max-width: 767px) {
+  .upper_box .path_container .path {
+    height: 100px;
+  }
+}
+.upper_box .path_container .path .white_path {
+  width: 44px;
+  height: 100%;
+  border: solid 1px #eee;
+  background-color: gray;
+}
+@media screen and (max-width: 767px) {
+  .upper_box .path_container .path .white_path {
+    width: 37.4px;
+  }
+}
+.upper_box .path_container .path .black_path {
+  position: absolute;
+  top: 0px;
+  width: 22px;
+  height: 100%;
+  margin-left: -11px;
+  margin-right: -11px;
+  z-index: 20;
+}
+@media screen and (max-width: 767px) {
+  .upper_box .path_container .path .black_path {
+    width: 18.7px;
+  }
+}
+.upper_box .path_container .path .white_square, .upper_box .path_container .path .black_square {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 98%;
+  height: 10px;
+}
+.upper_box .path_container .path .white_square.show, .upper_box .path_container .path .black_square.show {
+  opacity: 1;
+  animation: squareDown 2s linear forwards;
+}
+@media screen and (max-width: 767px) {
+  .upper_box .path_container .path .white_square.show, .upper_box .path_container .path .black_square.show {
+    animation: squareDownMobile 2s linear forwards;
+  }
+}
+.upper_box .path_container .path .white_square.show {
+  background-image: linear-gradient(180deg, #03d5b2 70%, #02a388 100%);
+}
+.upper_box .path_container .path .black_square.show {
+  background-image: linear-gradient(180deg, #03d5b2 70%, #02a388 100%);
+}
+
+@keyframes squareDown {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(250px);
+  }
+}
+@keyframes squareDownMobile {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(115px);
+  }
+}
+.center_box {
+  flex-direction: column;
+}
+.center_box .keyboard {
+  position: relative;
+  align-items: flex-start;
+}
+.center_box .keyboard .piano_key {
+  cursor: pointer;
+}
+.center_box .keyboard .piano_key .white {
+  align-items: flex-end;
+  width: 44px;
+  height: 200px;
+  border: solid 1px #eee;
+  background-color: white;
+  transition: 0.1s;
+}
+@media screen and (max-width: 767px) {
+  .center_box .keyboard .piano_key .white {
+    width: 37.4px;
+    height: 100px;
+  }
+}
+.center_box .keyboard .piano_key .white:hover {
+  background-color: #d5d5d5;
+}
+.center_box .keyboard .piano_key .white.playing {
+  background-color: #d5d5d5;
+}
+.center_box .keyboard .piano_key .black {
+  align-items: flex-end;
+  position: absolute;
+  top: 0px;
+  width: 22px;
+  height: 110px;
+  background-color: #585858;
+  margin-left: -11px;
+  margin-right: -11px;
+  z-index: 20;
+  transition: 0.1s;
+}
+@media screen and (max-width: 767px) {
+  .center_box .keyboard .piano_key .black {
+    width: 18.7px;
+    height: 55px;
+  }
+}
+.center_box .keyboard .piano_key .black:hover {
+  background-color: #3f3f3f;
+}
+.center_box .keyboard .piano_key .black.playing {
+  background-color: #727272;
+}
+.center_box .keyboard .piano_key .label {
+  position: absolute;
+  top: 0px;
+  font-size: 8px;
+}
+.center_box .keyboard .piano_key .white .label {
+  color: rgba(88, 88, 88, 0.4);
+  transform: translateY(20px);
+}
+.center_box .keyboard .piano_key .black .label {
+  color: rgba(238, 238, 238, 0.4);
+  transform: translateY(10px);
+}
+
+@keyframes showNote {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
