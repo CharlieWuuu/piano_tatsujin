@@ -148,6 +148,7 @@
             </div>
             <div
               class="black"
+              id="s.num"
               v-if="s.type == 'black'"
               v-on:click="clickNote(s.num)"
               :class="getCurrentHighlight(s.num, s.key) ? 'playing': ''"
