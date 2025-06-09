@@ -8,7 +8,7 @@ for (var i = 0; i < sound_index.length; i++) {
   soundPack.push({
     number: sound_index[i],
     url:
-      'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/music/' +
+      'https://charliewuuu.github.io/piano_tatsujin/assets/music/' +
       sound_index[i] +
       '.wav',
   });
