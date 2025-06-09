@@ -121,37 +121,37 @@ var vm = new Vue({
       {
         urlId: 0,
         description: '蝴蝶',
-        url: 'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/javascript/butterfly.json',
+        url: 'https://charliewuuu.github.io/piano_tatsujin/assets/javascript/butterfly.json',
       },
       {
         urlId: 1,
         description: '小星星',
-        url: 'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/javascript/star.json',
+        url: 'https://charliewuuu.github.io/piano_tatsujin/assets/javascript/star.json',
       },
       {
         urlId: 2,
         description: '歡樂頌',
-        url: 'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/javascript/Ode_to_Joy.json',
+        url: 'https://charliewuuu.github.io/piano_tatsujin/assets/javascript/Ode_to_Joy.json',
       },
       {
         urlId: 3,
         description: '小步舞曲',
-        url: 'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/javascript/minuet.json',
+        url: 'https://charliewuuu.github.io/piano_tatsujin/assets/javascript/minuet.json',
       },
       {
         urlId: 4,
         description: '給愛麗絲',
-        url: 'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/javascript/elise.json',
+        url: 'https://charliewuuu.github.io/piano_tatsujin/assets/javascript/elise.json',
       },
       {
         urlId: 5,
         description: '雨夜花',
-        url: 'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/javascript/rain.json',
+        url: 'https://charliewuuu.github.io/piano_tatsujin/assets/javascript/rain.json',
       },
       {
         urlId: 6,
         description: '龍貓',
-        url: 'https://charliewuuu.github.io/myWebsiteNotes/keyboard/assets/javascript/dodoro.json',
+        url: 'https://charliewuuu.github.io/piano_tatsujin/assets/javascript/dodoro.json',
       },
       {
         urlId: 7,
